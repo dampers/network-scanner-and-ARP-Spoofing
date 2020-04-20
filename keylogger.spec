@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['keylogger.py'],
-             pathex=['D:\\data\\전북대학교\\BCGlab\\network\\python'],
+             pathex=['D:\\data'],
              binaries=[],
              datas=[],
              hiddenimports=[],
