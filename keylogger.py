@@ -21,7 +21,7 @@ def getScreenshot():
     memDC.SelectObject(screenshot)
 
     memDC.BitBlt((0, 0), (width, height), pDC, (left, top), win32con.SRCCOPY)
-    screenshot.SaveBitmapFile(memDC, 'D:/data/전북대학교/BCGlab/network/python/screenshot%d.bmp' %num)
+    screenshot.SaveBitmapFile(memDC, 'D:/data/screenshot%d.bmp' %num)
     num += 1
 
     memDC.DeleteDC()
