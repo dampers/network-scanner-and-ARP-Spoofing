@@ -2,20 +2,32 @@ from socket import *
 import optparse
 import threading
 
+
 def portScan(host, port):
     try:
         s = socket(AF_INET, SOCK_STREAM)
         s.connect((host, int(port)))
-        print(host + "tcp/" + str(port)+" open")
+        print(host + "tcp/" + str(port) + " open")
 
     except:
-        print(host + "tcp/"+str(port)+" closed")
+        print(host + "tcp/" + str(port) + " closed")
+
 
 def main():
 
-    parser = optparse.OptionParser("uasge%prog "+ "-H <specify target host> -p <specify ports separated by ',' >")
-    parser.add_option("-H", '--host', dest = 'targethost', type = 'string', help = 'specify target host')
-    parser.add_option("-p", "--ports", dest = 'targetports', type = 'string', help = 'specify target ports separated by')
+    parser = optparse.OptionParser(
+        "uasge%prog " + "-H <specify target host> -p <specify ports separated by ',' >"
+    )
+    parser.add_option(
+        "-H", "--host", dest="targethost", type="string", help="specify target host"
+    )
+    parser.add_option(
+        "-p",
+        "--ports",
+        dest="targetports",
+        type="string",
+        help="specify target ports separated by",
+    )
 
     option, args = parser.parse_args()
     thost = option.targethost
@@ -30,6 +42,7 @@ def main():
     for port in tports:
         t = threading.Thread(target=portScan, args=(thost, port))
         t.start()
-        #portScan(host_ip, port)
+        portScan(host_ip, port)
+
 
 main()

@@ -2,5 +2,6 @@
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": false,
     "python.linting.enabled": true,
-    "python.pythonPath": "C:\\SPB_Data\\.virtualenvs\\python-aJnYh_1R\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\SPB_Data\\.virtualenvs\\python-aJnYh_1R\\Scripts\\python.exe",
+    "python.formatting.provider": "black"
 }
